@@ -1,0 +1,227 @@
+body {
+	background-color: #F7F7E9;
+	margin-bottom: 100px;
+}
+
+hr {
+    border-top: medium double #333;
+}
+
+.topbar {
+	height: 10px;
+	width: 100%;
+	top: 0;
+	background-color: #8A0000;
+	position: absolute;
+}
+
+.header {
+	padding: 10px;
+	margin-top: 10px;
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.header-nav {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.header-nav > li {
+	display: inline-block;
+}
+
+.header-nav > li > a.navlink {
+	border-left: 5px solid #999;
+	font-size: 16px;
+	color: #777;
+}
+
+.about > a:hover { border-left: 5px solid #000 !important; color: #000 !important; background: none !important; }
+.education > a:hover { border-left: 5px solid #FF6500 !important; color: #000 !important; background: none !important; }
+.work > a:hover { border-left: 5px solid #0C5AA1 !important; color: #000 !important; background: none !important; }
+.pot > a:hover { border-left: 5px solid #14971B !important; color: #000 !important; background: none !important; }
+.contact > a:hover { border-left: 5px solid #000 !important; color: #000 !important; background: none !important; }
+
+.flip {
+	-webkit-perspective: 800;
+	perspective: 800;
+	position: relative;
+	cursor: pointer;
+}
+
+.flip .card.flipped {
+	-webkit-transform: rotatey(-180deg);
+	transform: rotatey(-180deg);
+}
+.flip .card {
+	height: 100%;
+	-webkit-transform-style: preserve-3d;
+	-webkit-transition: 0.5s;
+	transform-style: preserve-3d;
+	transition: 0.5s;
+}
+
+.flip .card .face {
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	z-index: 2;
+	height: 100%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.flip .card .front {
+	margin-top: 0px;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+
+.flip .card .back {
+	height: 100%;
+	-webkit-transform: rotatey(-180deg);
+	transform: rotatey(-180deg);
+}
+
+.content {
+	font-family: 'Lora', serif;
+	color: #999;
+	text-align: justify;
+}
+
+.box {
+	background-color: #EDEDEA;
+	padding: 20px 20px 30px 20px;
+	height: 100%;
+}
+
+.content h3, .content .boxdate {
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.content h3 {
+	margin-top: 0;
+}
+
+.content .ingress {
+	margin-bottom: 10px;
+}
+
+#about h1 {
+	font-family: 'Open Sans Condensed', sans-serif;
+	color: #000;
+	margin-top: 0px;
+}
+
+#about img {
+	margin-top: 5px;
+}
+
+#about p {
+	font-size: 20px;
+}
+
+#education .box {
+	border-left: 10px solid #FF6500;
+}
+
+#work .box {
+	border-left: 10px solid #0C5AA1;
+}
+
+#pot .box {
+	border-left: 10px solid #14971B;
+}
+
+#education .back .box {
+	border-right: 10px solid #FF6500;
+	border-left: none;
+}
+
+#work .back .box {
+	border-right: 10px solid #0C5AA1;
+	border-left: none;
+}
+
+#pot .back .box {
+	border-right: 10px solid #14971B;
+	border-left: none;
+}
+
+/*@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+body {
+	background-color: #F2F2F2;
+	font-family: "Helvetica Neue", "Helvetica";
+}
+
+.boxcolor1 { background-color: #67773F; }
+.boxcolor2 { background-color: #D36B19; }
+.boxcolor3 { background-color: #3F7577; }
+.boxcolor4 { background-color: #DBAF19; }
+.boxcolor5 { background-color: #F93E20; }
+.boxcolor6 { background-color: #F924CB; }
+.boxcolor7 { background-color: #2048DB; }
+.boxcolor8 { background-color: #2FF287; }
+.boxcolor9 { background-color: #DBD320; }
+.boxcolor10 { background-color: #F97C28; }
+
+.box { 
+	color: #F2F2F2;
+	margin: 1em 0 1em 0;
+	padding: 1em;
+	height: 100px;
+}
+
+.boxtitle {
+	font-size: 1.2em;
+	line-height: 100px;
+}
+
+.boxdate {
+	font-size: 1.5em;
+	font-weight: 900;
+}
+
+.flippable {
+	perspective: 800;
+	-webkit-perspective: 800;
+	position: relative;
+	height: 100px;
+}
+
+.flippable .flipped {
+	-webkit-transform: rotateX(180deg);
+}
+
+.flippable .box {
+	width: 100%;
+	height: 100%;
+	-webkit-transform-style: preserve-3d;
+	-webkit-transition: 0.5s;
+}
+
+.flippable .box .front, .flippable .box  .back {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	-webkit-backface-visibility: hidden ;
+	z-index: 2;
+	line-height: 100px;
+}
+
+.flippable .box .front {
+	position: absolute;
+	z-index: 1;
+	cursor: pointer;
+}
+
+.flippable .box .back {
+	-webkit-transform: rotatex(-180deg);
+	cursor: pointer;
+}*/

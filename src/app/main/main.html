@@ -1,0 +1,301 @@
+<div class="topbar"> </div>
+
+<div class="container">
+  <!-- HEADER -->
+  <div class="header clearfix">
+    <h3 class="pull-left">Curriculum Vitae</h3>
+    <ul class="nav header-nav pull-right">
+      <li role="presentation" class="about"><a href ng-click="scrollTo('about')" class="navlink">About</a></li>
+      <li role="presentation" class="education"><a href ng-click="scrollTo('education')" class="navlink">Education</a></li>
+      <li role="presentation" class="work"><a href ng-click="scrollTo('work')" class="work navlink">Work</a></li>
+      <li role="presentation" class="pot"><a href ng-click="scrollTo('pot')" class="navlink">Positions of trust</a></li>
+      <!--<li role="presentation" class="contact"><a href ng-click="scrollTo('contact')" class="navlink">Contact</a></li>-->
+      <li role="presentation"><a href="http://fi.linkedin.com/pub/atte-saarinen/2b/795/175" class="buttonlink"><img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_in_20x15.png" height="16" alt="LinkedIn profile" /></a>
+      <li role="presentation"><a href="https://github.com/attes1"><img src="/assets/images/GitHub_Logo.png" height="16" alt="GitHub profile" class="buttonlink" /></a>
+    </ul>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+    <hr />
+
+    <div id="about" class="row">
+      <div class="col-xs-4">
+        <img src="/assets/images/halongbay.jpg" class="col-xs-12 img-circle" alt="Selfie" />
+      </div>
+      <div class="col-xs-8">
+        <h1>Atte Saarinen</h1>
+        <p>
+          {{ age }} yeards old enthusiastic software developer from Tampere, Finland. Experienced in wide variety of technologies, mostly focused on web application development.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris scelerisque leo iaculis, volutpat erat et, convallis urna. Nullam odio justo, placerat sed arcu id, tempus porttitor urna. Praesent ac nisl vel nisi posuere malesuada. Morbi a lectus et ex rutrum venenatis at nec risus. Phasellus euismod orci ac nulla fringilla consequat. Aliquam id lacinia tellus, id blandit sapien. Pellentesque posuere eleifend fringilla. Mauris nec venenatis orci. Phasellus nisi lacus, bibendum eget ultricies sit amet, posuere ut massa. Duis at diam a risus bibendum scelerisque.
+        </p>
+      </div>
+    </div>
+
+    <hr />
+
+    <h3>Education</h3>
+
+    <div id="education">
+      <div class="flip" ng-repeat="edu in education">
+        <div class="card" ng-class="{'flipped':isFlipped('edu', $index, 0)}" ng-click="isFlipped('edu', $index, 1)" autoheight>
+          <div class="face front">
+            <div class="row box">
+              <div class="col-xs-2">
+                <span class="boxdate">
+                  {{ edu.StartDateText }} - <br />
+                  {{ edu.EndDateText }}
+                </span>
+              </div>
+
+              <div class="col-xs-9">
+                <h3>{{ edu.TitleText }}</h3>
+                <p class="ingress">{{ edu.TitleIngressText }}</p>
+              </div>
+
+              <div class="col-xs-1">
+                <span class="glyphicon glyphicon-arrow-right pull-right"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="face back">
+            <div class="row box">
+              <div class="col-xs-2">
+                <span class="boxdate">
+                  {{ edu.StartDateText }} - <br />
+                  {{ edu.EndDateText }}
+                </span>
+              </div>
+
+              <div class="col-xs-9">
+                <p>{{ edu.DescriptionText }}</p>
+              </div>
+
+              <div class="col-xs-1">
+                <span class="glyphicon glyphicon-arrow-left pull-right"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+
+    <hr />
+
+    <h3>Work experience</h3>
+
+    <div id="work">
+      <div class="flip" ng-repeat="work in workexperience">
+        <div class="card" ng-class="{'flipped':isFlipped('work', $index, 0)}" ng-click="isFlipped('work', $index, 1)" autoheight>
+          <div class="face front">
+            <div class="row box">
+              <div class="col-xs-2">
+                <span class="boxdate">
+                  {{ work.StartDateText }} - <br />
+                  {{ work.EndDateText }}
+                </span>
+              </div>
+
+              <div class="col-xs-9">
+                <h3>{{ work.TitleText }}</h3>
+                <p class="ingress">{{ work.TitleIngressText }}</p>
+              </div>
+
+              <div class="col-xs-1">
+                <span class="glyphicon glyphicon-arrow-right pull-right"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="face back">
+            <div class="row box">
+              <div class="col-xs-2">
+                <span class="boxdate">
+                  {{ work.StartDateText }} - <br />
+                  {{ work.EndDateText }}
+                </span>
+              </div>
+
+              <div class="col-xs-9">
+                <p>{{ work.DescriptionText }}</p>
+              </div>
+
+              <div class="col-xs-1">
+                <span class="glyphicon glyphicon-arrow-left pull-right"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+
+    <hr />
+
+    <!--<h3>Positions of trust</h3>
+
+    <div id="pot">
+      <div class="flip" ng-repeat="pot in positionsoftrust">
+        <div class="card" ng-class="{'flipped':isFlipped('pot', $index, 0)}" ng-click="isFlipped('pot', $index, 1)" autoheight>
+          <div class="face front">
+            <div class="row box">
+              <div class="col-xs-2">
+                <span class="boxdate">
+                  {{ pot.StartDateText }} - <br />
+                  {{ pot.EndDateText }}
+                </span>
+              </div>
+
+              <div class="col-xs-9">
+                <h2>{{ pot.TitleText }}</h2>
+              </div>
+
+              <div class="col-xs-1">
+                <span class="glyphicon glyphicon-arrow-right pull-right"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="face back">
+            <div class="row box">
+              <div class="col-xs-2">
+                <span class="boxdate">
+                  {{ pot.StartDateText }} - <br />
+                  {{ pot.EndDateText }}
+                </span>
+              </div>
+
+              <div class="col-xs-9">
+                <p>{{ pot.DescriptionText }}</p>
+              </div>
+
+              <div class="col-xs-1">
+                <span class="glyphicon glyphicon-arrow-left pull-right"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+
+    <hr />-->
+
+    <h3>Contact</h3>
+
+    <div id="contact">
+      <address>
+        Tohtorinkatu 32 B8<br />
+        33720 Tampere<br />
+        atte.saarinen@iki.fi<br />
+        +358442706007<br />
+      </address>
+    </div>
+  </div>
+</div>
+
+
+<!--
+              
+
+
+
+
+  <div class="row">
+    <div class="col-xs-8">
+      <h4>Curriculum Vitae</h4>
+    </div>
+
+    <div class="col-xs-4">
+      <span class="pull-right">GitHub LinkedIn PDF</span>
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="row">
+    <div class="col-xs-4">
+      <img src="..." class="img-responsive" alt="Portrait">
+    </div>
+
+    <div class="col-xs-4">
+      <h1>Atte Saarinen</h1>
+      <p>
+
+      </p>
+    </div>
+
+    <div class="col-xs-4">
+      <address>
+        Tohtorinkatu 32 B8<br />
+        33720 Tampere<br />
+        +358442706007<br />
+        atte.saarinen@iki.fi<br />
+      </address>
+    </div>    
+  </div>
+
+  <hr />
+
+  <h2>Education</h2>
+
+  <div class="row boxcolor1 box">
+    <div class="col-xs-2">
+      <span class="boxdate">
+        2006 - <br />
+
+      </span>
+    </div>
+
+    <div class="col-xs-10">
+      <span class="boxtitle">Tampere University of Technology</span>
+    </div>
+  </div>
+
+  <div class="row boxcolor2 box">
+    <div class="col-xs-2">
+      <span class="boxdate">
+        2003 - <br />
+        2006
+      </span>
+    </div>
+
+    <div class="col-xs-10">
+      <span class="boxtitle">Pälkäneen Lukio</span>
+    </div>
+  </div>
+
+  <hr />
+
+  <h2>Work Experience</h2>
+  <div class="flippable">
+    <div class="box boxcolor3" ng-class="{'flipped':isFlipped}" ng-click="isFlipped=!isFlipped">
+      <div class="front">
+        <div class="row">
+          <div class="col-xs-2">
+            <span class="boxdate">
+              2011 - <br />
+
+            </span>
+          </div>
+
+          <div class="col-xs-10">
+            <span class="boxtitle">Saarinen &amp; Aho Consulting</span>
+          </div>
+        </div>
+      </div>
+      <div class="back">
+        <div class="row">
+          <div class="col-xs-12">
+            xcvxcdslag lasgkjasdl das,fmn akfdjasnf ,amdasfkju adsfs dasfa dsa adsfas ddfas fasd fsa dfasd adsfasdf 11112 1221 12 14124 1241 2421
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+
+  <h2>Positions of trust</h2>
+-->

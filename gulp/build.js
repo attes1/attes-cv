@@ -64,7 +64,7 @@ gulp.task('html', ['scripts', 'partials'], function () {
 });
 
 gulp.task('images', function () {
-  return gulp.src('src/assets/images/**/*')
+  return gulp.src('src/assets/images/*')
     .pipe($.cache($.imagemin({
       optimizationLevel: 3,
       progressive: true,

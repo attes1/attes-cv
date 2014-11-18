@@ -19,7 +19,7 @@ angular.module('cv2')
       { StartDateText: '08/2009', EndDateText: '11/2010',
         TitleKey: 'joiner_title', DescriptionKey: 'joiner_desc', TitleText: 'Joiner Oy', TitleIngressText: 'Software Developer',
         DescriptionText: 'Desktop sofware development with C#.NET + WPF, Adoble Flex + Air and Java + Spring + Hibernate. Oracle and PostgreSQL database design.', flipped: false },
-      { StartDateText: '10/2007', EndDateText: '',
+      { StartDateText: '10/2007', EndDateText: '10/2007',
         TitleKey: 'softerhead_title', DescriptionKey: 'softerhead_desc', TitleText: 'Softerhead Oy', TitleIngressText: 'Web designer',
         DescriptionText: 'Simple website design project including HTML, CSS, some PHP and graphics design.', flipped: false },
       { StartDateText: '07/2007', EndDateText: '08/2007',

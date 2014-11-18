@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('cv2', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ngRoute'])
+angular.module('cv2', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ngRoute', 'ngFlowtype'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

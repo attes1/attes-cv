@@ -1,0 +1,64 @@
+---
+import { z } from 'zod';
+import cx from 'classnames';
+import dayjs from 'dayjs';
+
+import cakeIcon from '../assets/cake-fill.svg';
+import emailIcon from '../assets/at-fill.svg';
+import phoneIcon from '../assets/phone-fill.svg';
+import locationIcon from '../assets/map-pin-line-fill.svg';
+import pdfIcon from '../assets/file-pdf-fill.svg';
+
+import { sectionHeading, detailsRow, link, icon, hideInPrint } from '../styles/main.css';
+
+export const Details = z.object({
+  name: z.string(),
+  description: z.string(),
+  email: z.string().email(),
+  phone: z.string(),
+  birthdate: z.coerce.date(),
+  address: z.object({
+    street: z.string(),
+    city: z.string(),
+    zip: z.string(),
+    country: z.string(),
+  }),
+});
+
+export type DetailsProps = z.infer<typeof Details>;
+
+const {
+  email,
+  phone,
+  birthdate,
+  address: { city, zip, country },
+} = Astro.props;
+---
+
+<>
+  <h2 class={sectionHeading}>Details</h2>
+  <span class={detailsRow}>
+    <img src={cakeIcon} alt="Birthday" class={icon} />
+    {dayjs(birthdate).format('MMM D, YYYY')}
+  </span>
+
+  <a href={`mailto:${email}`} class={cx(detailsRow, link)}>
+    <img src={emailIcon} alt="Email" class={icon} />
+    <span>{email}</span>
+  </a>
+
+  <a href={`tel:${phone}`} class={cx(detailsRow, link)}>
+    <img src={phoneIcon} alt="Phone" class={icon} />
+    <span>{phone}</span>
+  </a>
+
+  <span class={detailsRow}>
+    <img src={locationIcon} alt="Location" class={icon} />
+    {[zip, city, country].filter(Boolean).join(', ')}
+  </span>
+
+  <a href="/saarinen_atte_cv.pdf" class={cx(detailsRow, link, hideInPrint)}>
+    <img src={pdfIcon} alt="PDF" class={icon} />
+    <span>Download PDF</span>
+  </a>
+</>

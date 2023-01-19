@@ -1,0 +1,27 @@
+---
+import dayjs from 'dayjs';
+
+import { timeframe } from '../styles/main.css';
+
+export interface TimeframeProps {
+  from: Date;
+  to?: Date;
+  format: string;
+}
+
+const { from, to, format } = Astro.props;
+---
+
+<span class={timeframe}>
+  <span>{dayjs(from).format(format)}</span>
+  <span> &rarr;</span>
+  {
+    to ? (
+      <>
+        <span>{dayjs(to).format(format)}</span>
+      </>
+    ) : (
+      <span>Present</span>
+    )
+  }
+</span>

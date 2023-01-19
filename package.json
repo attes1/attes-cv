@@ -1,0 +1,30 @@
+{
+  "name": "@example/basics",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "pdf": "node ./pdf.js"
+  },
+  "dependencies": {
+    "@astrojs/image": "^0.12.1",
+    "astro": "^1.9.2",
+    "astro-vanilla-extract": "^1.2.2",
+    "classnames": "^2.3.2",
+    "dayjs": "^1.11.7",
+    "puppeteer": "^19.5.2",
+    "sharp": "^0.31.3",
+    "zod": "^3.20.2"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "printWidth": 120,
+    "tabWidth": 2
+  }
+}

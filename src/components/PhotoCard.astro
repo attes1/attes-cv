@@ -1,0 +1,11 @@
+---
+import { getImage } from '@astrojs/image';
+
+import { imgContainer, img } from '../styles/main.css';
+
+const { src, alt } = await getImage({ src: '/selfie.jpeg', format: 'webp', width: 960, height: 960, alt: 'Selfie' });
+---
+
+<div class={imgContainer}>
+  <img src={src} alt={alt} class={img} />
+</div>

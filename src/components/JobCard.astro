@@ -1,0 +1,32 @@
+---
+import { z } from 'zod';
+import cx from 'classnames';
+
+import { group, listItem, paragraph, avoidBreak } from '../styles/main.css';
+import Timeframe from './Timeframe.astro';
+
+export const Job = z.object({
+  employer: z.string(),
+  title: z.string(),
+  description: z.string(),
+  from: z.coerce.date(),
+  to: z.coerce.date().optional(),
+});
+
+export type JobProps = z.infer<typeof Job>;
+
+const { employer, title, description, from, to } = Astro.props;
+---
+
+<li class={cx(listItem, avoidBreak)}>
+  <header>
+    <h3 class={group}>
+      <span>{employer}</span>
+      <Timeframe from={from} to={to} format="MMM YYYY" />
+    </h3>
+    <strong>{title}</strong>
+  </header>
+  <p class={paragraph}>
+    {description}
+  </p>
+</li>

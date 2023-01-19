@@ -1,0 +1,49 @@
+---
+import { z } from 'zod';
+import cx from 'classnames';
+
+import { group, listItem, paragraph, avoidBreak } from '../styles/main.css';
+import Timeframe from './Timeframe.astro';
+
+export const Project = z.object({
+  role: z.string(),
+  industry: z.string(),
+  description: z.string(),
+  from: z.coerce.date(),
+  to: z.coerce.date().optional(),
+  keywords: z.array(z.string()).nonempty(),
+});
+
+export type ProjectProps = z.infer<typeof Project>;
+
+const { role, industry, description, from, to, keywords } = Astro.props;
+---
+
+<li class={cx(listItem, avoidBreak)}>
+  <h3>
+    <div class={group}>
+      <span>
+        {role}
+      </span>
+      <Timeframe from={from} to={to} format="YYYY" />
+    </div>
+  </h3>
+
+  <p class={paragraph}>
+    {description}
+  </p>
+
+  <p>
+    <small>
+      <strong>Industry:</strong>
+      {industry}
+    </small>
+  </p>
+
+  <p>
+    <small>
+      <strong>Keywords:</strong>
+      {keywords.join(', ')}
+    </small>
+  </p>
+</li>

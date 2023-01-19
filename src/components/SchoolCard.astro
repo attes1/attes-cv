@@ -1,0 +1,31 @@
+---
+import { z } from 'zod';
+import cx from 'classnames';
+
+import { group, listItem, avoidBreak } from '../styles/main.css';
+import Timeframe from './Timeframe.astro';
+
+export const School = z.object({
+  school: z.string(),
+  degree: z.string().optional(),
+  field: z.string().optional(),
+  from: z.coerce.date(),
+  to: z.coerce.date().optional(),
+});
+
+export type SchoolProps = z.infer<typeof School>;
+
+const { school, degree, field, from, to } = Astro.props;
+---
+
+<li class={cx(listItem, avoidBreak)}>
+  <h3>
+    <div class={group}>
+      <span>
+        {`${school}, ${field}`}
+      </span>
+      <Timeframe from={from} to={to} format="YYYY" />
+    </div>
+    {degree ? <small>Degree: {degree}</small> : null}
+  </h3>
+</li>

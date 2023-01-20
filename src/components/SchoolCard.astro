@@ -22,7 +22,7 @@ const { school, degree, field, from, to } = Astro.props;
   <h3>
     <div class={group}>
       <span>
-        {`${school}, ${field}`}
+        {[school, field].filter(Boolean).join(', ')}
       </span>
       <Timeframe from={from} to={to} format="YYYY" />
     </div>

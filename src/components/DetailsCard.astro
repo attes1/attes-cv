@@ -54,7 +54,7 @@ const {
 
   <span class={detailsRow}>
     <img src={locationIcon} alt="Location" class={icon} />
-    {[zip, city, country].filter(Boolean).join(', ')}
+    {[city, country].filter(Boolean).join(', ')}
   </span>
 
   <a href="/saarinen_atte_cv.pdf" class={cx(detailsRow, link, hideInPrint)}>
